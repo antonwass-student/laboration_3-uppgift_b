@@ -15,14 +15,23 @@ public class Book implements Comparable {
     
     private String title;
     private String isbn;
-
-
     private int edition;
     private double price;
     
     private ArrayList<Author> authors;
     
-    public Book(){
+    public Book(String title, String isbn, int edition, double price){
+        this.title = title;
+        this.isbn = isbn;
+        this.edition = edition;
+        this.price = price;
+        
+        authors = new ArrayList();
+    }
+    
+    public void addAuthor(Author author)
+    {
+        authors.add(author);
     }
     
     public String getIsbn() {
