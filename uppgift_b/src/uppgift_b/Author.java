@@ -9,7 +9,7 @@ package uppgift_b;
  * This class contains a string with the name of an author.
  * @author anton & fredrik
  */
-public class Author {
+public class Author{
     private String name;
     
     public Author(String name){
@@ -23,5 +23,4 @@ public class Author {
     public String getName(){
         return name;
     }
-    
 }

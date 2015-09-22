@@ -64,4 +64,50 @@ public class CollectionOfBooks {
         return searchResult;
     }
     
+    /**
+     * Searches for all books with matching ISBN in the collection.
+     * 
+     * @param isbn the isbn to be searched for
+     * @return an ArrayList containing all the matched books. 
+     */
+    public ArrayList<Book> getBooksByIsbn(String isbn){
+        ArrayList<Book> searchResult = new ArrayList();
+        isbn = isbn.trim();
+        
+        for(Book b : collection){
+            if(b.getIsbn().equalsIgnoreCase(isbn)){
+                searchResult.add(b);
+            }
+        }
+        
+        Collections.sort(searchResult);
+        
+        return searchResult;
+    }
+    
+    /**
+     * Searches for books in the collection that are written by an author.
+     * 
+     * @param author the author of the books to find.
+     * @return an ArrayList containing the books with the specified author.
+     */
+    public ArrayList<Book> getBooksByAuthor(String author){
+        ArrayList<Book> searchResult = new ArrayList();
+        author = author.trim();
+        
+        for(Book b : collection){
+            ArrayList<Author> authors = b.getAuthors();
+            
+            for(Author a : authors){
+                if(a.getName().contains(author)){
+                    searchResult.add(b);
+                }
+            }
+        }
+        
+        Collections.sort(searchResult);
+        
+        return searchResult;
+    }
+    
 }
