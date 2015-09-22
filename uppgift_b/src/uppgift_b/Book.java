@@ -8,10 +8,11 @@ package uppgift_b;
 import java.util.ArrayList;
 
 /**
- *
+ * This class represents a book.
+ * 
  * @author anton
  */
-public class Book implements Comparable {
+public class Book implements Comparable<Book> {
     
     private String title;
     private String isbn;
@@ -20,18 +21,15 @@ public class Book implements Comparable {
     
     private ArrayList<Author> authors;
     
-    public Book(String title, String isbn, int edition, double price){
+    public Book(String title, String isbn, int edition, double price,
+            ArrayList<Author> authors){
         this.title = title;
         this.isbn = isbn;
         this.edition = edition;
         this.price = price;
         
-        authors = new ArrayList();
-    }
-    
-    public void addAuthor(Author author)
-    {
-        authors.add(author);
+        this.authors = new ArrayList();
+        this.authors.addAll(authors);
     }
     
     public String getIsbn() {
@@ -55,9 +53,14 @@ public class Book implements Comparable {
     }
     
     @Override
-    public int compareTo(Object other){
-        Book temp = (Book) other;
-        return title.compareToIgnoreCase(temp.title);
+    public int compareTo(Book other){
+        if(other instanceof Book)
+        {
+            Book temp = (Book) other;
+            return title.compareToIgnoreCase(temp.title);
+        }
+        else
+            return 0;
     }
 
 }
