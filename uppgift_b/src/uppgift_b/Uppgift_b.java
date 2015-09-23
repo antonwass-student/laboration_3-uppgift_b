@@ -16,6 +16,7 @@ public class Uppgift_b {
      */
     public static void main(String[] args) {
         UserInterface ui = new UserInterface();
+        ui.start("books.dat");
         // TODO code application logic here
     }
     

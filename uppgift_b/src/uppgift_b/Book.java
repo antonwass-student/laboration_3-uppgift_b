@@ -5,6 +5,7 @@
  */
 package uppgift_b;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
@@ -12,7 +13,7 @@ import java.util.ArrayList;
  * 
  * @author anton
  */
-public class Book implements Comparable<Book> {
+public class Book implements Comparable<Book>, Serializable {
     
     private String title;
     private String isbn;

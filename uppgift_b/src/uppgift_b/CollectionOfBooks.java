@@ -25,6 +25,16 @@ public class CollectionOfBooks {
         collection = new ArrayList();
     }
     
+    public void saveToFile(String path){
+    }
+    
+    public void loadFromFile(String path){
+    }
+    
+    public ArrayList<Book> getCollection(){
+        return collection;
+    }
+    
     /**
      * Adds a book to the collection.
      * @param book the book to be added to the collection.

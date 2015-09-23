@@ -5,11 +5,13 @@
  */
 package uppgift_b;
 
+import java.io.Serializable;
+
 /**
  * This class contains a string with the name of an author.
  * @author anton & fredrik
  */
-public class Author{
+public class Author implements Serializable{
     private String name;
     
     public Author(String name){
