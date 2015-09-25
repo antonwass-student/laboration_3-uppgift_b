@@ -26,8 +26,9 @@ public class UserInterface {
     public void start(String booksPath)
     {
         this.booksPath = booksPath;
-        //registry.loadFromFile(booksPath);
+        registry.loadFromFile(booksPath);
         menu();
+        registry.saveToFile(booksPath);
     }
     
     private void menu()
